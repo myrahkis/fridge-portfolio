@@ -2,8 +2,9 @@ import { createGlobalStyle, css } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
     ${css`
-      :root {
-      }
+      /* :root {
+
+      } */
 
       * {
         box-sizing: border-box;
@@ -13,19 +14,17 @@ const GlobalStyles = createGlobalStyle`
 
       html {
         font-size: 65.5%;
-        min-height: 100vh;
-        min-width: 100%;
       }
 
       body {
-        display: flex;
+        overflow: hidden;
         font-family: "Rubik", sans-serif;
         font-optical-sizing: auto;
         font-style: normal;
         font-weight: 500;
         font-size: 2rem;
-        min-height: 100vh;
-        min-width: 100%;
+        height: 100vh;
+        width: 100%;
       }
 
       h1,

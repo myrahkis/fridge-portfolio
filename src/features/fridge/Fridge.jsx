@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 import Magnets from "./Magnets";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const StyledFridge = styled.div`
   position: relative;
@@ -27,11 +27,12 @@ const FridgeClosed = styled.div`
   ${(props) =>
     props.isOpen &&
     css`
-      transform: rotateY(110deg) translateX(6rem) scaleY(1.05);
+      cursor: pointer;
+      transform: rotateY(120deg) translateX(10rem) scaleY(1.05) scaleX(1.01);
       transform-origin: right;
 
-      background-image: none;
-      background-color: seagreen;
+      /* background-image: none; */
+      /* background-color: seagreen; */
     `}
 `;
 
@@ -44,7 +45,9 @@ const FridgeOpened = styled.div`
   opacity: 0;
   width: 100%;
   height: 100vh;
-  transition: all 1s ease-in-out;
+  transition: none;
+  transition: all 3s;
+
   /* opacity: 0; */
   /* width: 0;
   height: 0; */
@@ -75,17 +78,36 @@ function Fridge() {
   const [isOpen, setIsOpen] = useState(false);
   const fridgeRef = useRef(null);
 
+  useEffect(
+    function () {
+      if (isOpen) {
+        setTimeout(
+          () =>
+            (fridgeRef.current.style.backgroundImage = `url("открытая-дверца.png")`),
+          330
+        );
+      } else {
+        fridgeRef.current.style.backgroundImage = `url("/холодос-закрытый-последний.png")`;
+      }
+    },
+    [isOpen]
+  );
+
   return (
     <StyledFridge>
-      <FridgeClosed isOpen={isOpen} ref={fridgeRef}>
+      <FridgeClosed
+        isOpen={isOpen}
+        ref={fridgeRef}
+        onClick={isOpen ? () => setIsOpen(false) : null}
+      >
         {!isOpen && (
           <>
             <Magnets fridgeRef={fridgeRef} />
+            <Btn onClick={() => setIsOpen((o) => !o)}>
+              <Handle src="/ручка.png" />
+            </Btn>
           </>
         )}
-        <Btn onClick={() => setIsOpen((o) => !o)}>
-          <Handle src="/ручка.png" />
-        </Btn>
       </FridgeClosed>
       <FridgeOpened isOpen={isOpen}>&nbsp;</FridgeOpened>
     </StyledFridge>

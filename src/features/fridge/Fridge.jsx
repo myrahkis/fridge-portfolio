@@ -1,6 +1,7 @@
 import styled, { css } from "styled-components";
 import Magnets from "./Magnets";
 import { useEffect, useRef, useState } from "react";
+import FridgeOpened from "./FridgeOpened";
 
 const StyledFridge = styled.div`
   position: relative;
@@ -33,32 +34,6 @@ const FridgeClosed = styled.div`
 
       /* background-image: none; */
       /* background-color: seagreen; */
-    `}
-`;
-
-const FridgeOpened = styled.div`
-  transition: all 0.4s;
-  background-image: url("/холодос-открытый-последний.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  opacity: 0;
-  width: 100%;
-  height: 100vh;
-  transition: none;
-  transition: all 3s;
-
-  /* opacity: 0; */
-  /* width: 0;
-  height: 0; */
-
-  ${(props) =>
-    props.isOpen &&
-    css`
-      width: 100%;
-      height: 100vh;
-      opacity: 1;
-      /* opacity: 1; */
     `}
 `;
 
@@ -109,7 +84,7 @@ function Fridge() {
           </>
         )}
       </FridgeClosed>
-      <FridgeOpened isOpen={isOpen}>&nbsp;</FridgeOpened>
+      <FridgeOpened isOpen={isOpen} />
     </StyledFridge>
   );
 }

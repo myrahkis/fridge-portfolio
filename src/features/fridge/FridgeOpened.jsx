@@ -45,7 +45,18 @@ const Inner = styled.div`
   .box3 {
     grid-row: 3 / 5;
     grid-column: 1 / 2;
-    background-color: red;
+
+    background-image: url("/ящики/ящик-торт.png");
+    background-size: 80% 70%;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    margin-bottom: -1rem;
+    cursor: pointer;
+    transition: all 120ms;
+
+    &:hover {
+      transform: translateY(1.5rem);
+    }
   }
   .box4 {
     grid-row: 3 / 5;
@@ -134,6 +145,11 @@ const ProjectName = styled.span`
     left: 34%;
     transform: rotate(30deg);
   }
+
+  &#ukiyo {
+    bottom: -7%;
+    left: 38%;
+  }
 `;
 
 function FridgeOpened({ isOpen }) {
@@ -142,7 +158,12 @@ function FridgeOpened({ isOpen }) {
       <Inner>
         <div className="box1">1</div>
         <div className="box2">2</div>
-        <div className="box3">3</div>
+        <div className="box3">
+          <Container>
+            <Sticker src="стикер.png" position="low" />
+            <ProjectName id="ukiyo">Ukiyo</ProjectName>
+          </Container>
+        </div>
         <div className="box4">
           <Container>
             <Sticker src="стикер.png" position="low" />

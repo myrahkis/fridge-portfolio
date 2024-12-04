@@ -1,6 +1,8 @@
 /* eslint-disable react/prop-types */
 import styled, { css } from "styled-components";
 import ProjectName from "../../ui/ProjectName";
+import ProjectOverview from "../../ui/ProjectOverview";
+import Modal from "../../ui/Modal";
 
 const Container = styled.div`
   position: relative;
@@ -22,14 +24,24 @@ const Sticker = styled.img`
     `}
 `;
 
-function ProjectBox({ boxId, project, position, projectName }) {
+function ProjectBox({ projectInfo, boxId, project, position, projectName }) {
+    console.log(projectInfo);
   return (
-    <div className={boxId}>
-      <Container>
-        <Sticker src="стикер.png" position={position} />
-        <ProjectName id={project}>{projectName}</ProjectName>
-      </Container>
-    </div>
+    <>
+      <Modal>
+        <Modal.Open opens={project}>
+          <div className={boxId}>
+            <Container>
+              <Sticker src="стикер.png" position={position} />
+              <ProjectName id={project}>{projectName}</ProjectName>
+            </Container>
+          </div>
+        </Modal.Open>
+        <Modal.Window name={project}>
+          <ProjectOverview projectInfo={projectInfo} />
+        </Modal.Window>
+      </Modal>
+    </>
   );
 }
 

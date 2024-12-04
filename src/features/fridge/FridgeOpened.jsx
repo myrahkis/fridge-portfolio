@@ -1,6 +1,7 @@
 import styled, { css } from "styled-components";
 import Inner from "../../ui/Inner";
 import ProjectBox from "./ProjectBox";
+import projects from "../../data/projects";
 
 const StyledFridgeOpened = styled.div`
   display: flex;
@@ -29,48 +30,20 @@ function FridgeOpened({ isOpen }) {
   return (
     <StyledFridgeOpened isOpen={isOpen}>
       <Inner>
-        <ProjectBox
-          boxId="box1"
-          project="kinolog"
-          position="low"
-          projectName="KinoLog"
-        />
-        <ProjectBox
-          boxId="box2"
-          project="quiz"
-          position="low"
-          projectName="The quiz"
-        />
-        <ProjectBox
-          boxId="box3"
-          project="ukiyo"
-          position="low"
-          projectName="Ukiyo"
-        />
-        <ProjectBox
-          boxId="box4"
-          project="sassy-show-off"
-          position="low"
-          projectName={
-            <p>
-              Sassy <br /> show off
-            </p>
-          }
-        />
-        <ProjectBox
-          boxId="box6"
-          project="good-soup"
-          projectName={
-            <p>
-              Good <br /> soup
-            </p>
-          }
-        />
-        <ProjectBox
-          boxId="box7"
-          project="tic-tac-toe"
-          projectName="tic-tac-toe"
-        />
+        {projects.map((project) => (
+          <ProjectBox
+            key={project.project}
+            projectInfo={project.infoExpanded}
+            boxId={project.boxId}
+            project={project.project}
+            projectName={
+              <p dangerouslySetInnerHTML={{ __html: project.projectName }} />
+            }
+            position={
+              project.boxId !== "box6" && project.boxId !== "box7" && "low"
+            }
+          />
+        ))}
       </Inner>
     </StyledFridgeOpened>
   );

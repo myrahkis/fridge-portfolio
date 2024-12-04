@@ -81,7 +81,7 @@ function Magnets({ fridgeRef }) {
     //     ref.current = null; // Очистка рефов
     //   });
     // };
-  }, []);
+  }, [fridgeRef]);
 
   return (
     <StyledMagnets>

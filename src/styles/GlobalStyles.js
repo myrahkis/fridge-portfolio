@@ -25,6 +25,9 @@ const GlobalStyles = createGlobalStyle`
         font-size: 2rem;
         height: 100vh;
         width: 100%;
+
+        background-image: url("мб-фон.png");
+        background-size: 65% 100%;
       }
 
       h1,

@@ -79,7 +79,7 @@ function Fridge() {
           <>
             <Magnets fridgeRef={fridgeRef} />
             <Btn onClick={() => setIsOpen((o) => !o)}>
-              <Handle src="/ручка.png" />
+              <Handle src="ручка-надпись-вертикальная.png" />
             </Btn>
           </>
         )}

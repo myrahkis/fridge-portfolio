@@ -35,7 +35,19 @@ const Inner = styled.div`
 
   .box1 {
     grid-row: 1 / 3;
-    background-color: purple;
+
+    background-image: url("/ящики/ящик-бургер.png");
+    background-size: 75% 70%;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    margin-bottom: -0.3rem;
+    cursor: pointer;
+    transition: all 120ms;
+
+    &:hover {
+      transform: scaleY(1.2) scaleX(1.1);
+      margin-bottom: 0.7rem;
+    }
   }
   .box2 {
     grid-row: 1 / 3;
@@ -167,15 +179,25 @@ const ProjectName = styled.span`
     bottom: -7%;
     left: 32%;
   }
+
+  &#kinolog {
+    bottom: -6%;
+    left: 33%;
+  }
 `;
 
 function FridgeOpened({ isOpen }) {
   return (
     <StyledFridgeOpened isOpen={isOpen}>
       <Inner>
-        <div className="box1">1</div>
+        <div className="box1">
+          <Container>
+            <Sticker src="стикер.png" position="low" />
+            <ProjectName id="kinolog">KinoLog</ProjectName>
+          </Container>
+        </div>
         <div className="box2">
-        <Container>
+          <Container>
             <Sticker src="стикер.png" position="low" />
             <ProjectName id="quiz">The Quiz</ProjectName>
           </Container>

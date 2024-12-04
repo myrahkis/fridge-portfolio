@@ -50,7 +50,18 @@ const Inner = styled.div`
   .box4 {
     grid-row: 3 / 5;
     grid-column: 2 / -1;
-    background-color: blue;
+
+    background-image: url("/ящики/ящик-лосось.png");
+    background-size: 80% 70%;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    margin-bottom: -1rem;
+    cursor: pointer;
+    transition: all 120ms;
+
+    &:hover {
+      transform: translateY(1.5rem);
+    }
   }
   .box6 {
     grid-row: 6 / -1;
@@ -94,6 +105,12 @@ const Sticker = styled.img`
   width: 8rem;
   height: 7rem;
   margin-bottom: 1.1rem;
+
+  ${(props) =>
+    props.position &&
+    css`
+      margin-bottom: -3.2rem;
+    `}
 `;
 
 const ProjectName = styled.span`
@@ -101,13 +118,20 @@ const ProjectName = styled.span`
   font-size: 1.5rem;
 
   &#good-soup {
-    bottom: 16%;
-    left: 37%;
+    bottom: 13%;
+    left: 40%;
   }
 
   &#tic-tac-toe {
-    bottom: 20%;
-    left: 27%;
+    bottom: 19%;
+    left: 28%;
+    transform: rotate(30deg);
+  }
+
+  &#sassy-show-off {
+    text-align: center;
+    bottom: -12%;
+    left: 34%;
     transform: rotate(30deg);
   }
 `;
@@ -116,10 +140,17 @@ function FridgeOpened({ isOpen }) {
   return (
     <StyledFridgeOpened isOpen={isOpen}>
       <Inner>
-        <div className="box1">&nbsp;</div>
-        <div className="box2">&nbsp;</div>
-        <div className="box3">&nbsp;</div>
-        <div className="box4">&nbsp;</div>
+        <div className="box1">1</div>
+        <div className="box2">2</div>
+        <div className="box3">3</div>
+        <div className="box4">
+          <Container>
+            <Sticker src="стикер.png" position="low" />
+            <ProjectName id="sassy-show-off">
+              sassy <br /> show off
+            </ProjectName>
+          </Container>
+        </div>
         <div className="box5">&nbsp;</div>
         <div className="box6">
           <Container>

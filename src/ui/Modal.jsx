@@ -4,6 +4,7 @@ import useOutsideClick from "../hooks/useOutsideClick";
 import { createPortal } from "react-dom";
 
 const StyledModal = styled.div`
+  /* position: relative; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,9 +14,7 @@ const StyledModal = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   position: fixed;
-  border: 4px dashed var(--dark-bg-color);
   border-radius: 2rem;
-  background-color: var(--main-color);
 `;
 
 const Blur = styled.div`
@@ -31,6 +30,9 @@ const Blur = styled.div`
 `;
 
 const Close = styled.button`
+  position: absolute;
+  top: 0;
+  right: 0;
   width: fit-content;
   align-self: flex-end;
   margin-top: 2rem;
@@ -38,14 +40,14 @@ const Close = styled.button`
   font-size: 1.5;
   font-weight: 800;
   padding: 0.5rem 1rem;
-  background-color: var(--danger-color);
+  background-color: #a23a4a;
   border: none;
   border-radius: 1rem;
-  color: var(--light-text-color);
+  color: #6aaea3;
+  transition: background-color 0.3s;
 
   &:hover {
-    background-color: var(--dark-danger-color);
-    transition: background-color 0.3s;
+    background-color: #a21a2f;
   }
 `;
 
@@ -70,7 +72,7 @@ function Window({ children, name }) {
 
   if (name !== openName) return null;
 
-  return createPortal (
+  return createPortal(
     <Blur>
       <StyledModal ref={ref}>
         <Close onClick={close}>X</Close>

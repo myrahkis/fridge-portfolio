@@ -42,6 +42,7 @@ function FridgeOpened({ isOpen }) {
             position={
               project.boxId !== "box6" && project.boxId !== "box7" && "low"
             }
+            h1Size={project.boxId === "box4" && "small"}
           />
         ))}
       </Inner>

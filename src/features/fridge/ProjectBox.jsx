@@ -24,8 +24,7 @@ const Sticker = styled.img`
     `}
 `;
 
-function ProjectBox({ projectInfo, boxId, project, position, projectName }) {
-    console.log(projectInfo);
+function ProjectBox({ projectInfo, boxId, project, position, projectName, h1Size }) {
   return (
     <>
       <Modal>
@@ -38,7 +37,7 @@ function ProjectBox({ projectInfo, boxId, project, position, projectName }) {
           </div>
         </Modal.Open>
         <Modal.Window name={project}>
-          <ProjectOverview projectInfo={projectInfo} />
+          <ProjectOverview projectInfo={projectInfo} h1Size={h1Size} />
         </Modal.Window>
       </Modal>
     </>

@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import Magnets from "./Magnets";
+import Magnets from "../magnets/Magnets";
 import { useEffect, useRef, useState } from "react";
 import FridgeOpened from "./FridgeOpened";
 

@@ -9,7 +9,7 @@ const StyledModal = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 85%;
+  width: ${(props) => props.width + "%"};
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -66,7 +66,7 @@ function Modal({ children }) {
   );
 }
 
-function Window({ children, name }) {
+function Window({ children, name, width }) {
   const { openName, close } = useContext(ModalContex);
   const ref = useOutsideClick(close);
 
@@ -74,7 +74,7 @@ function Window({ children, name }) {
 
   return createPortal(
     <Blur>
-      <StyledModal ref={ref}>
+      <StyledModal ref={ref} width={width}>
         <Close onClick={close}>X</Close>
         {cloneElement(children, { onClose: close })}
       </StyledModal>

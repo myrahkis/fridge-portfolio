@@ -47,22 +47,18 @@ const Magnet = styled.span`
   }
   &#magnet2 {
     top: 4rem;
-    right: 8rem;
+    right: 6.5rem;
 
-    width: 7rem;
-    height: 7rem;
+    width: 10rem;
+    height: 10rem;
     background-image: url("магниты/magnet-contacts.png");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     transition: transform 0.2s;
-    transform: rotate(22deg);
 
     &:hover {
-      transform: scale(1.4) rotate(22deg);
-    }
-    &:active {
-      transform: rotate(22deg);
+      transform: scale(1.4);
     }
   }
   &#magnet3 {

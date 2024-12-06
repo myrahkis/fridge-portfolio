@@ -2,6 +2,7 @@ import { Tooltip } from "react-tooltip";
 import Modal from "../../ui/Modal";
 import MagnetInfo from "./MagnetInfo";
 import styled from "styled-components";
+import magnets from "../../data/magnets";
 
 const linkGithub = "https://github.com/myrahkis";
 const linkMeme = "https://yandex.ru/video/preview/14730867519621346732";
@@ -37,61 +38,28 @@ function MagnetsTooltips() {
   return (
     <Container>
       {/* modals */}
-      <Modal>
-        <Tooltip
-          className="custom-tooltip"
-          id="magnet1"
-          content={
-            <Modal.Open opens="credits">
-              <Name>Credits</Name>
-            </Modal.Open>
-          }
-          arrowColor="#00584d"
-          border="3px solid #00584d"
-          clickable
-        />
-        <Modal.Window name="credits" width="34">
-          <MagnetInfo magnet="magnet1" />
-        </Modal.Window>
-      </Modal>
-
-      <Modal>
-        <Tooltip
-          className="custom-tooltip"
-          id="magnet2"
-          content={
-            <Modal.Open opens="contacts">
-              <Name>Контакты</Name>
-            </Modal.Open>
-          }
-          arrowColor="#00584d"
-          border="3px solid #00584d"
-          clickable
-        />
-        <Modal.Window name="contacts" width="34">
-          <MagnetInfo magnet="magnet2" />
-        </Modal.Window>
-      </Modal>
-
-      <Modal>
-        <Tooltip
-          className="custom-tooltip"
-          id="magnet3"
-          content={
-            <Modal.Open opens="about-me">
-              <Name>Обо мне</Name>
-            </Modal.Open>
-          }
-          globalCloseEvents={["mousedown"]}
-          arrowColor="#00584d"
-          border="3px solid #00584d"
-          ts="click"
-          clickable
-        />
-        <Modal.Window name="about-me" width="34">
-          <MagnetInfo magnet="magnet3" />
-        </Modal.Window>
-      </Modal>
+      {magnets.map((magnet) => (
+        <Modal key={magnet.name}>
+          <Tooltip
+            className="custom-tooltip"
+            id={magnet.id}
+            content={
+              <Modal.Open opens={magnet.modal}>
+                <Name>{magnet.name}</Name>
+              </Modal.Open>
+            }
+            arrowColor="#00584d"
+            border="3px solid #00584d"
+            clickable
+          />
+          <Modal.Window name={magnet.modal} width="34">
+            <MagnetInfo
+              name={magnet.name}
+              data={magnet.info}
+            />
+          </Modal.Window>
+        </Modal>
+      ))}
 
       {/* links */}
       <Tooltip

@@ -62,7 +62,7 @@ function Fridge() {
           330
         );
       } else {
-        fridgeRef.current.style.backgroundImage = `url("/холодос-закрытый-последний.png")`;
+        fridgeRef.current.style.backgroundImage = `url("холодос-закрытый-последний.png")`;
       }
     },
     [isOpen]

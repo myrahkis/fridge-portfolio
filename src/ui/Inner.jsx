@@ -12,7 +12,7 @@ const Inner = styled.div`
   .box1 {
     grid-row: 1 / 3;
 
-    background-image: url("/ящики/ящик-бургер.png");
+    background-image: url("ящики/ящик-бургер.png");
     background-size: 75% 70%;
     background-position: bottom;
     background-repeat: no-repeat;
@@ -29,7 +29,7 @@ const Inner = styled.div`
     grid-row: 1 / 3;
     grid-column: 2 / -1;
 
-    background-image: url("/ящики/ящик-арбуз.png");
+    background-image: url("ящики/ящик-арбуз.png");
     background-size: 75% 70%;
     background-position: bottom;
     background-repeat: no-repeat;
@@ -46,7 +46,7 @@ const Inner = styled.div`
     grid-row: 3 / 5;
     grid-column: 1 / 2;
 
-    background-image: url("/ящики/ящик-торт.png");
+    background-image: url("ящики/ящик-торт.png");
     background-size: 80% 70%;
     background-position: bottom;
     background-repeat: no-repeat;
@@ -62,7 +62,7 @@ const Inner = styled.div`
     grid-row: 3 / 5;
     grid-column: 2 / -1;
 
-    background-image: url("/ящики/ящик-лосось.png");
+    background-image: url("ящики/ящик-лосось.png");
     background-size: 80% 70%;
     background-position: bottom;
     background-repeat: no-repeat;
@@ -77,28 +77,28 @@ const Inner = styled.div`
   .box6 {
     grid-row: 6 / -1;
 
-    background-image: url("/ящики/ящик-помидоры.png");
+    background-image: url("ящики/ящик-помидоры.png");
     background-size: 100% 90%;
     background-position: bottom;
     background-repeat: no-repeat;
     cursor: pointer;
 
     &:hover {
-      background-image: url("/ящики/ящик-помидоры-безкр.png");
+      background-image: url("ящики/ящик-помидоры-безкр.png");
       transform: translateY(1.5rem);
     }
   }
   .box7 {
     grid-row: 6 / -1;
     grid-column: -2 / -1;
-    background-image: url("/ящики/ящик-кабачки.png");
+    background-image: url("ящики/ящик-кабачки.png");
     background-size: 100% 95%;
     background-position: bottom;
     background-repeat: no-repeat;
     cursor: pointer;
 
     &:hover {
-      background-image: url("/ящики/ящик-кабачки-безкр.png");
+      background-image: url("ящики/ящик-кабачки-безкр.png");
       transform: translateY(1.5rem);
     }
   }

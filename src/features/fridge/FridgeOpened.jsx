@@ -8,7 +8,7 @@ const StyledFridgeOpened = styled.div`
   align-items: end;
   justify-content: center;
   transition: all 0.4s;
-  background-image: url("/холодос-открытый-последний.png");
+  background-image: url("холодос-открытый-последний.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;

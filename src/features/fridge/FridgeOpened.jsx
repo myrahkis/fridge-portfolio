@@ -2,6 +2,7 @@ import styled, { css } from "styled-components";
 import Inner from "../../ui/Inner";
 import ProjectBox from "./ProjectBox";
 import projects from "../../data/projects";
+import { device } from "../../styles/adaptability";
 
 const StyledFridgeOpened = styled.div`
   display: flex;
@@ -11,7 +12,7 @@ const StyledFridgeOpened = styled.div`
   background-image: url("холодос-открытый-последний.png");
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: bottom;
   opacity: 0;
   width: 100%;
   height: 100vh;
@@ -24,6 +25,22 @@ const StyledFridgeOpened = styled.div`
       height: 100vh;
       opacity: 1;
     `}
+
+  @media ${device.xl} {
+    background-size: 100% 100%;
+  }
+  @media ${device.m} {
+    background-size: 100% 100%;
+  }
+  @media ${device.s} {
+    background-size: 100% 100%;
+  }
+  @media ${device.xs} {
+    background-size: 105% 100%;
+  }
+  /* @media ${device.m} {
+    background-size: cover;
+  } */
 `;
 
 function FridgeOpened({ isOpen }) {

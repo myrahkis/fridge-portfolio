@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 import styled, { css } from "styled-components";
 import ProjectName from "../../ui/ProjectName";
-import ProjectOverview from "../../ui/ProjectOverview";
 import Modal from "../../ui/Modal";
+import ProjectOverview from "./ProjectOverview";
 
 const Container = styled.div`
   position: relative;

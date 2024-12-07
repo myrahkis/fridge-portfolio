@@ -8,6 +8,12 @@ const StyledApp = styled.div`
   justify-content: center;
   height: 100vh;
 
+  @media ${device.m} {
+    overflow: hidden;
+  }
+  @media ${device.s} {
+    overflow: hidden;
+  }
   @media ${device.xs} {
     overflow: hidden;
   }

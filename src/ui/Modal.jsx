@@ -17,16 +17,22 @@ const StyledModal = styled.div`
   position: fixed;
   border-radius: 2rem;
 
-  @media ${device.xl} {
-    width: 40%;
+  /* @media ${device.xl} {
+    top: 45%;
+  } */
+  @media ${device.m} {
+    width: 65%;
     height: 75vh;
+  }
+  /* 
   }
   @media ${device.l} {
     width: 43%;
     height: 75vh;
   }
-  @media ${device.m} {
-    width: 69%;
+    */
+  @media ${device.s} {
+    width: 75%;
     height: 75vh;
   }
   @media ${device.xs} {
@@ -69,6 +75,9 @@ const Close = styled.button`
     background-color: #a21a2f;
   }
 
+  /* @media ${device.xl} {
+    right: 15%; 
+  } */
   @media ${device.xs} {
     right: 2rem;
     padding: 1rem;

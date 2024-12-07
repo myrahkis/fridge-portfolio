@@ -44,25 +44,25 @@ const Container = styled.div`
     margin: 0;
     margin-left: 3rem;
     height: 70vh;
-    overflow-y: scroll;
+    overflow-y: auto;
   }
   @media ${device.l} {
     width: 87%;
     margin-left: 3rem;
     height: 70vh;
-    overflow-y: scroll;
+    overflow-y: auto;
   }
   @media ${device.m} {
     width: 98%;
     margin-left: 2rem;
     height: 65vh;
-    overflow-y: scroll;
+    overflow-y: auto;
   }
   @media ${device.xs} {
     width: 90%;
-    margin-left: 4rem;
+    margin-left: 2rem;
     height: 65vh;
-    overflow-y: scroll;
+    overflow-y: auto;
   }
 `;
 

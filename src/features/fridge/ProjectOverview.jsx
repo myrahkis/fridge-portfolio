@@ -1,24 +1,47 @@
-import styled, { css } from "styled-components";
-
 /* eslint-disable react/prop-types */
+import styled, { css } from "styled-components";
+import { device } from "../../styles/adaptability";
+
 const StyledProjectOverview = styled.div`
   overflow: hidden;
   width: 100%;
   height: 75vh;
   border-radius: 2rem;
   background-color: #6aaea3;
+
+  /* @media ${device.xl} {
+    width: 90%;
+  } */
 `;
 
 const Grid = styled.div`
   height: inherit;
   display: grid;
   grid-template-columns: 2fr 0.8fr;
+
+  @media ${device.s} {
+    display: flex;
+    flex-direction: column-reverse;
+    height: fit-content;
+  }
+  @media ${device.xs} {
+    display: flex;
+    flex-direction: column-reverse;
+    height: fit-content;
+  }
 `;
 
 const Demo = styled.iframe`
   width: 100%;
   height: 100%;
   border: none;
+
+  @media ${device.s} {
+    height: 80vh;
+  }
+  @media ${device.xs} {
+    height: 75vh;
+  }
 `;
 
 const Info = styled.div`
@@ -26,6 +49,11 @@ const Info = styled.div`
   flex-direction: column;
   gap: 1rem;
   padding: 2rem 2.5rem;
+
+  @media ${device.m} {
+    width: 20rem;
+    padding: 1rem 1.5rem;
+  }
 `;
 
 const H1 = styled.h1`
@@ -34,6 +62,10 @@ const H1 = styled.h1`
     css`
       font-size: 3.35rem;
     `}
+
+  @media ${device.m} {
+    font-size: 3rem;
+  }
 `;
 
 const Link = styled.a`
@@ -57,6 +89,10 @@ const Link = styled.a`
 const Text = styled.p`
   font-size: 1.9rem;
   margin-top: 0.5rem;
+
+  @media ${device.m} {
+    font-size: 1.5rem;
+  }
 `;
 
 function ProjectOverview({ projectInfo, h1Size }) {

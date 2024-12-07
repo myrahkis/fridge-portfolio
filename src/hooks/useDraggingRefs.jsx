@@ -36,6 +36,36 @@ function useDraggingRefs(containerRef, arrSize) {
             elem.current.onmouseup = null;
           };
         };
+
+        // Для сенсорных устройств
+        elem.current.ontouchstart = function (event) {
+          const touch = event.touches[0]; // первая точка касания
+
+          moveAt(touch.pageX, touch.pageY);
+
+          function onTouchMove(event) {
+            const touch = event.touches[0];
+            moveAt(touch.pageX, touch.pageY);
+          }
+
+          document.addEventListener("touchmove", onTouchMove);
+
+          elem.current.ontouchend = function () {
+            document.removeEventListener("touchmove", onTouchMove);
+            elem.current.ontouchend = null;
+          };
+        };
+
+        function moveAt(pageX, pageY) {
+          const fridgeRect = containerRef.current.getBoundingClientRect();
+          const localX = pageX - fridgeRect.left;
+          const localY = pageY - fridgeRect.top;
+
+          elem.current.style.left =
+            localX - elem.current.offsetWidth / 2 + "px";
+          elem.current.style.top =
+            localY - elem.current.offsetHeight / 2 + "px";
+        }
       }
 
       elems.current.forEach((elem) => drag(elem));

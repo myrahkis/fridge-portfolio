@@ -50,13 +50,11 @@ function MagnetsTooltips() {
             }
             arrowColor="#00584d"
             border="3px solid #00584d"
+            event={["mouseover", "focus", "touchstart"]}
             clickable
           />
           <Modal.Window name={magnet.modal} width="34">
-            <MagnetInfo
-              name={magnet.name}
-              data={magnet.info}
-            />
+            <MagnetInfo nameRu={magnet.name} data={magnet.info} />
           </Modal.Window>
         </Modal>
       ))}

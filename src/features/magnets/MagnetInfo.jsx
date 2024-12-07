@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import magnets from "../../data/magnets";
 import { device } from "../../styles/adaptability";
 import styled from "styled-components";
 
@@ -110,13 +111,16 @@ const Link = styled.a`
   }
 `;
 
-function MagnetInfo({ name, data }) {
+function MagnetInfo({ magnetId, nameRu, data }) {
+  const [selected] = magnets.filter((magnet) => magnet.id === magnetId);
+  const name = selected ? selected.name : nameRu;
+  const info = selected ? selected.info : data;
   return (
     <StyledMagnetInfo>
       <Container>
         <h1>{name}</h1>
         <List>
-          {data?.map((sentence, index) =>
+          {info?.map((sentence, index) =>
             name === "Контакты" ? (
               <Link href={sentence.link} key={index} target="_blank">
                 <Point>{sentence.sent}</Point>

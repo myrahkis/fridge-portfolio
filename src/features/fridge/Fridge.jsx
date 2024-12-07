@@ -1,8 +1,8 @@
 import styled, { css } from "styled-components";
-import Magnets from "../magnets/Magnets";
 import { useEffect, useRef, useState } from "react";
-import FridgeOpened from "./FridgeOpened";
 import { device } from "../../styles/adaptability";
+import Magnets from "../magnets/Magnets";
+import FridgeOpened from "./FridgeOpened";
 
 const StyledFridge = styled.div`
   position: relative;

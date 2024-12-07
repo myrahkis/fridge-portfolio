@@ -1,7 +1,8 @@
 import { cloneElement, createContext, useContext, useState } from "react";
+import { createPortal } from "react-dom";
+import { device } from "../styles/adaptability";
 import styled from "styled-components";
 import useOutsideClick from "../hooks/useOutsideClick";
-import { createPortal } from "react-dom";
 
 const StyledModal = styled.div`
   /* position: relative; */
@@ -15,6 +16,23 @@ const StyledModal = styled.div`
   transform: translate(-50%, -50%);
   position: fixed;
   border-radius: 2rem;
+
+  @media ${device.xl} {
+    width: 40%;
+    height: 75vh;
+  }
+  @media ${device.l} {
+    width: 43%;
+    height: 75vh;
+  }
+  @media ${device.m} {
+    width: 69%;
+    height: 75vh;
+  }
+  @media ${device.xs} {
+    width: 80%;
+    height: 75vh;
+  }
 `;
 
 const Blur = styled.div`
@@ -33,11 +51,12 @@ const Close = styled.button`
   position: absolute;
   top: 0;
   right: 0;
+  z-index: 10;
   width: fit-content;
   align-self: flex-end;
   margin-top: 2rem;
   margin-right: 2rem;
-  font-size: 1.5;
+  font-size: 1.5rem;
   font-weight: 800;
   padding: 0.5rem 1rem;
   background-color: #a23a4a;
@@ -48,6 +67,11 @@ const Close = styled.button`
 
   &:hover {
     background-color: #a21a2f;
+  }
+
+  @media ${device.xs} {
+    right: 2rem;
+    padding: 1rem;
   }
 `;
 

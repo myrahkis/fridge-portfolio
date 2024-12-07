@@ -1,8 +1,8 @@
 import styled, { css } from "styled-components";
+import { device } from "../../styles/adaptability";
 import Inner from "../../ui/Inner";
 import ProjectBox from "./ProjectBox";
 import projects from "../../data/projects";
-import { device } from "../../styles/adaptability";
 
 const StyledFridgeOpened = styled.div`
   display: flex;
@@ -38,9 +38,6 @@ const StyledFridgeOpened = styled.div`
   @media ${device.xs} {
     background-size: 105% 100%;
   }
-  /* @media ${device.m} {
-    background-size: cover;
-  } */
 `;
 
 function FridgeOpened({ isOpen }) {

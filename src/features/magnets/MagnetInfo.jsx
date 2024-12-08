@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
-import magnets from "../../data/magnets";
 import { device } from "../../styles/adaptability";
+import magnets from "../../data/magnets";
 import styled from "styled-components";
 
 const StyledMagnetInfo = styled.div`
@@ -120,6 +120,7 @@ function MagnetInfo({ magnetId, nameRu, data }) {
   const [selected] = magnets.filter((magnet) => magnet.id === magnetId);
   const name = selected ? selected.name : nameRu;
   const info = selected ? selected.info : data;
+  
   return (
     <StyledMagnetInfo>
       <Container>

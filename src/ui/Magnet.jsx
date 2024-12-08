@@ -1,5 +1,5 @@
-import styled from "styled-components";
 import { device } from "../styles/adaptability";
+import styled from "styled-components";
 
 const Magnet = styled.span`
   cursor: pointer;

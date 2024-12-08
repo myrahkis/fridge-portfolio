@@ -127,9 +127,9 @@ function ProjectOverview({ projectInfo, h1Size }) {
         <Demo src={gitDemo} sandbox isOpenInfo={openInfo}></Demo>
         <InfoBtn onClick={() => setOpenInfo((open) => !open)}>
           {!openInfo ? (
-            <span>&darr; Open info</span>
+            <span>&darr; Подробности</span>
           ) : (
-            <span>&uarr; Close info</span>
+            <span>&uarr; Подробности</span>
           )}
         </InfoBtn>
         <Info isOpenInfo={openInfo}>

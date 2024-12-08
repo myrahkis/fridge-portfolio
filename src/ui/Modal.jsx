@@ -5,7 +5,6 @@ import styled from "styled-components";
 import useOutsideClick from "../hooks/useOutsideClick";
 
 const StyledModal = styled.div`
-  /* position: relative; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -17,20 +16,11 @@ const StyledModal = styled.div`
   position: fixed;
   border-radius: 2rem;
 
-  /* @media ${device.xl} {
-    top: 45%;
-  } */
   @media ${device.m} {
     width: 65%;
     height: 75vh;
   }
-  /* 
-  }
-  @media ${device.l} {
-    width: 43%;
-    height: 75vh;
-  }
-    */
+
   @media ${device.s} {
     width: 75%;
     height: 75vh;

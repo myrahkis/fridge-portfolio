@@ -1,3 +1,4 @@
+import { device } from "../styles/adaptability";
 import styled from "styled-components";
 
 const Inner = styled.div`
@@ -8,6 +9,10 @@ const Inner = styled.div`
   width: 65%;
   height: 70vh;
   margin-bottom: 4rem;
+
+  @media ${device.xs} {
+    grid-template-rows: repeat(6, 1fr);
+  }
 
   .box1 {
     grid-row: 1 / 3;
@@ -23,6 +28,12 @@ const Inner = styled.div`
     &:hover {
       transform: scaleY(1.2) scaleX(1.1);
       margin-bottom: 0.7rem;
+    }
+
+    @media ${device.xs} {
+      grid-row: 2 / 3;
+      background-size: 75% 70%;
+      margin-bottom: -2rem;
     }
   }
   .box2 {
@@ -41,6 +52,12 @@ const Inner = styled.div`
       transform: scaleY(1.2) scaleX(1.1);
       margin-bottom: 0.7rem;
     }
+
+    @media ${device.xs} {
+      grid-row: 2 / 3;
+      background-size: 75% 75%;
+      margin-bottom: -2rem;
+    }
   }
   .box3 {
     grid-row: 3 / 5;
@@ -56,6 +73,12 @@ const Inner = styled.div`
 
     &:hover {
       transform: translateY(1.5rem);
+    }
+
+    @media ${device.xs} {
+      grid-row: 3 / 4;
+      background-size: 75% 60%;
+      margin-bottom: -6rem;
     }
   }
   .box4 {
@@ -73,6 +96,12 @@ const Inner = styled.div`
     &:hover {
       transform: translateY(1.5rem);
     }
+
+    @media ${device.xs} {
+      grid-row: 3 / 4;
+      background-size: 75% 58%;
+      margin-bottom: -6rem;
+    }
   }
   .box6 {
     grid-row: 6 / -1;
@@ -87,6 +116,11 @@ const Inner = styled.div`
       background-image: url("ящики/ящик-помидоры-безкр.png");
       transform: translateY(1.5rem);
     }
+
+    @media ${device.xs} {
+      grid-row: 5 / -1;
+      background-size: 100% 85%;
+    }
   }
   .box7 {
     grid-row: 6 / -1;
@@ -100,6 +134,11 @@ const Inner = styled.div`
     &:hover {
       background-image: url("ящики/ящик-кабачки-безкр.png");
       transform: translateY(1.5rem);
+    }
+
+    @media ${device.xs} {
+      grid-row: 5 / -1;
+      background-size: 100% 91%;
     }
   }
 `;

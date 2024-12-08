@@ -55,13 +55,14 @@ const Blur = styled.div`
 
 const Close = styled.button`
   position: absolute;
-  top: 0;
-  right: 0;
+  display: flex;
+  align-items: center;
+  top: 1rem;
+  right: 1rem;
   z-index: 10;
   width: fit-content;
+  height: 3.5rem;
   align-self: flex-end;
-  margin-top: 2rem;
-  margin-right: 2rem;
   font-size: 1.5rem;
   font-weight: 800;
   padding: 0.5rem 1rem;
@@ -75,11 +76,18 @@ const Close = styled.button`
     background-color: #a21a2f;
   }
 
-  /* @media ${device.xl} {
-    right: 15%; 
-  } */
-  @media ${device.xs} {
+  @media ${device.m} {
+    top: 1.5rem;
+    right: 1.5rem;
+  }
+  @media ${device.s} {
+    top: 1.5rem;
     right: 2rem;
+    padding: 1rem;
+  }
+  @media ${device.xs} {
+    top: 1rem;
+    right: 1rem;
     padding: 1rem;
   }
 `;

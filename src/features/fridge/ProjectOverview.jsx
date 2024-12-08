@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import styled, { css } from "styled-components";
 import { device } from "../../styles/adaptability";
+import { useState } from "react";
 
 const StyledProjectOverview = styled.div`
   overflow: hidden;
@@ -8,10 +9,6 @@ const StyledProjectOverview = styled.div`
   height: 75vh;
   border-radius: 2rem;
   background-color: #6aaea3;
-
-  /* @media ${device.xl} {
-    width: 90%;
-  } */
 `;
 
 const Grid = styled.div`
@@ -19,40 +16,65 @@ const Grid = styled.div`
   display: grid;
   grid-template-columns: 2fr 0.8fr;
 
-  @media ${device.s} {
+  @media ${device.m} {
     display: flex;
-    flex-direction: column-reverse;
-    height: fit-content;
-  }
-  @media ${device.xs} {
-    display: flex;
-    flex-direction: column-reverse;
-    height: fit-content;
+    flex-direction: ${(props) =>
+      props.isOpenInfo ? "column" : "column-reverse"};
   }
 `;
 
 const Demo = styled.iframe`
   width: 100%;
-  height: 100%;
+  height: inherit;
   border: none;
 
-  @media ${device.s} {
-    height: 80vh;
+  @media ${device.m} {
+    display: ${(props) => props.isOpenInfo && "none"};
   }
-  @media ${device.xs} {
-    height: 75vh;
+`;
+
+const InfoBtn = styled.button`
+  display: none;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  height: fit-content;
+  width: fit-content;
+  border-radius: 2rem;
+  margin-left: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  background-color: #005349;
+  color: #6aaea3;
+
+  @media ${device.m} {
+    display: inline-flex;
   }
 `;
 
 const Info = styled.div`
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
   gap: 1rem;
   padding: 2rem 2.5rem;
 
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-gutter: stable;
+  scrollbar-color: #005349 #6aaea3;
+
   @media ${device.m} {
-    width: 20rem;
-    padding: 1rem 1.5rem;
+    display: none;
+    ${(props) =>
+      props.isOpenInfo &&
+      css`
+        display: block;
+        width: 100%;
+        gap: 0.5rem;
+        height: 100vh;
+      `}
   }
 `;
 
@@ -97,14 +119,20 @@ const Text = styled.p`
 
 function ProjectOverview({ projectInfo, h1Size }) {
   const { name, gitDemo, gitLink, stack, desc } = projectInfo;
+  const [openInfo, setOpenInfo] = useState(false);
 
   return (
     <StyledProjectOverview>
-      <Grid>
-        <div>
-          <Demo src={gitDemo} sandbox></Demo>
-        </div>
-        <Info>
+      <Grid isOpenInfo={openInfo}>
+        <Demo src={gitDemo} sandbox isOpenInfo={openInfo}></Demo>
+        <InfoBtn onClick={() => setOpenInfo((open) => !open)}>
+          {!openInfo ? (
+            <span>&darr; Open info</span>
+          ) : (
+            <span>&uarr; Close info</span>
+          )}
+        </InfoBtn>
+        <Info isOpenInfo={openInfo}>
           <H1 size={h1Size}>
             <Link href={gitLink} target="_blank" title={`${name} в github`}>
               {name}

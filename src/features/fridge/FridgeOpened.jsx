@@ -9,7 +9,7 @@ const StyledFridgeOpened = styled.div`
   align-items: end;
   justify-content: center;
   transition: all 0.4s;
-  background-image: url("холодос-открытый-последний.png");
+  background-image: url("холодос-открытый-без-ящиков.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: bottom;
@@ -36,7 +36,7 @@ const StyledFridgeOpened = styled.div`
     background-size: 100% 100%;
   }
   @media ${device.xs} {
-    background-size: 105% 100%;
+    background-size: 100% 85%;
   }
 `;
 

@@ -25,7 +25,7 @@ const StyledFridge = styled.div`
     width: 80%;
   }
   @media ${device.xs} {
-    width: 95%;
+    width: 100%;
   }
 `;
 
@@ -35,8 +35,8 @@ const FridgeClosed = styled.div`
   left: 0;
   z-index: 1;
   background-image: url("/холодос-закрытый-последний.png");
-  /* background-size: cover; */
   background-repeat: no-repeat;
+  background-position: bottom;
   background-size: 100% 100%;
   transition: all 1s;
   height: 100vh;
@@ -52,14 +52,9 @@ const FridgeClosed = styled.div`
       @media ${device.s} {
         transform: rotateY(120deg) translateX(11rem) scaleY(1.05);
       }
-      /* @media ${device.m} {
-        background-size: cover;
-        transform: rotateY(120deg) translateX(7rem) scaleY(1.05) scaleX(1.01);
-      } */
     `}
 
   @media ${device.xl} {
-    /* background-size: cover; */
     background-size: 100% 100%;
   }
   @media ${device.m} {
@@ -69,7 +64,7 @@ const FridgeClosed = styled.div`
     background-size: 100% 100%;
   }
   @media ${device.xs} {
-    background-size: 100% 100%;
+    background-size: 100% 85%;
   }
 `;
 

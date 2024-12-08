@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "../styles/adaptability";
 
 const Magnet = styled.span`
   cursor: pointer;
@@ -23,6 +24,10 @@ const Magnet = styled.span`
     }
     &:active {
       transform: rotate(8deg);
+    }
+
+    @media ${device.xs} {
+      top: 35rem;
     }
   }
   &#magnet1 {
@@ -60,6 +65,13 @@ const Magnet = styled.span`
     &:hover {
       transform: scale(1.4);
     }
+
+    @media ${device.xs} {
+      top: 16rem;
+      right: 5rem;
+      width: 9rem;
+      height: 9rem;
+    }
   }
   &#magnet3 {
     left: 13rem;
@@ -79,6 +91,13 @@ const Magnet = styled.span`
     }
     &:active {
       transform: rotate(-10deg);
+    }
+
+    @media ${device.xs} {
+      top: 29rem;
+      left: 11rem;
+      width: 9rem;
+      height: 9rem;
     }
   }
   &#magnet4 {

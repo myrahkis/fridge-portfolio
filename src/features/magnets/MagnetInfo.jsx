@@ -40,6 +40,11 @@ const Container = styled.div`
   width: 86%;
   transform: rotate(-4deg);
 
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-gutter: stable;
+  scrollbar-color: lightgrey transparent; 
+
   @media ${device.xl} {
     width: 95%;
     margin: 0;
